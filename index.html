@@ -16,6 +16,7 @@
         body {
             background-color: #0b0c10;
             color: #ffffff;
+            overflow-x: hidden;
         }
 
         /* Navigation Bar */
@@ -36,6 +37,7 @@
             font-weight: 900;
             color: #d4af37;
             letter-spacing: 3px;
+            cursor: pointer;
         }
 
         .nav-links {
@@ -49,6 +51,7 @@
             text-decoration: none;
             font-weight: bold;
             transition: 0.3s;
+            cursor: pointer;
         }
 
         .nav-links a:hover {
@@ -183,91 +186,139 @@
             background-color: #ffffff;
             color: #0b0c10;
         }
+
+        /* Coming Soon Full Screen Screen Page Overlay */
+        #coming-soon-page {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #0b0c10;
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #coming-soon-page h1 {
+            font-size: 5rem;
+            color: #d4af37;
+            letter-spacing: 5px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-shadow: 0px 0px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        #coming-soon-page p {
+            color: #c5c6c7;
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+        }
+
+        .back-btn {
+            background-color: transparent;
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #d4af37;
+            color: #0b0c10;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="logo">LEADEEDGE AUTOMOBILE</div>
-        <ul class="nav-links">
-            <li><a href="#">Inventory</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">About Us</a></li>
-        </ul>
-    </header>
+    <!-- Main Website View Containers -->
+    <div id="main-site-content">
+        <!-- Header Navigation Links -->
+        <header>
+            <div class="logo" onclick="location.reload()">LEADEEDGE AUTOMOBILE</div>
+            <ul class="nav-links">
+                <li><a onclick="showComingSoon()">Inventory</a></li>
+                <li><a onclick="showComingSoon()">Services</a></li>
+                <li><a onclick="showComingSoon()">About Us</a></li>
+            </ul>
+        </header>
 
-    <!-- Hero Showcase Section -->
-    <section class="hero">
-        <h1>DRIVE THE <span>EDGE OF LUXURY</span></h1>
-        <p>Prestige vehicles engineered for exceptional performance.</p>
-    </section>
+        <!-- Hero Showcase Section -->
+        <section class="hero">
+            <h1>DRIVE THE <span>EDGE OF LUXURY</span></h1>
+            <p>Prestige vehicles engineered for exceptional performance.</p>
+        </section>
 
-    <!-- Main Inventory Section -->
-    <main class="showroom">
-        <h2 class="section-title">Current Fleet Available</h2>
-        <div class="grid">
-
-            <!-- Vehicle Card 1: Sports Car -->
-            <div class="car-card">
-                <div class="img-wrapper">
-                    <!-- Live image asset from Dreamstime storage -->
-                    <img src="https://dreamstime.com" alt="Apex Grand Coupe">
-                </div>
-                <div class="info car-info">
-                    <div class="car-tags">
-                        <span class="tag">New Fleet</span>
-                        <span class="tag">V8 Bi-Turbo</span>
+        <!-- Main Inventory Section -->
+        <main class="showroom">
+            <h2 class="section-title">Current Fleet Available</h2>
+            <div class="grid">
+                
+                <!-- Vehicle Card 1 -->
+                <div class="car-card">
+                    <div class="img-wrapper">
+                        <img src="https://dreamstime.com" alt="Apex Grand Coupe">
                     </div>
-                    <h3>Apex Grand Coupe Blue</h3>
-                    <div class="car-price">$189,500</div>
-                    <button class="inquire-btn" onclick="bookInquiry('Apex Grand Coupe')">Book Private Viewing</button>
-                </div>
-            </div>
-
-            <!-- Vehicle Card 2: Electric Concept -->
-            <div class="car-card">
-                <div class="img-wrapper">
-                    <!-- Live image asset from Vecteezy storage -->
-                    <img src="https://amazonaws.com" alt="Aero EV Concept">
-                </div>
-                <div class="info car-info">
-                    <div class="car-tags">
-                        <span class="tag">100% Electric</span>
-                        <span class="tag">Autopilot Ready</span>
+                    <div class="info car-info">
+                        <div class="car-tags">
+                            <span class="tag">New Fleet</span>
+                            <span class="tag">V8 Bi-Turbo</span>
+                        </div>
+                        <h3>Apex Grand Coupe Blue</h3>
+                        <div class="car-price">$189,500</div>
+                        <button class="inquire-btn" onclick="showComingSoon()">Book Private Viewing</button>
                     </div>
-                    <h3>Aero EV Concept</h3>
-                    <div class="car-price">$115,000</div>
-                    <button class="inquire-btn" onclick="bookInquiry('Aero EV Concept')">Book Private Viewing</button>
                 </div>
-            </div>
 
-            <!-- Vehicle Card 3: Premium SUV -->
-            <div class="car-card">
-                <div class="img-wrapper">
-                    <!-- Live image asset from iStock storage -->
-                    <img src="https://istockphoto.com" alt="Titanium Edition SUV">
-                </div>
-                <div class="info car-info">
-                    <div class="car-tags">
-                        <span class="tag">All-Wheel Drive</span>
-                        <span class="tag">7-Seater Luxury</span>
+                <!-- Vehicle Card 2 -->
+                <div class="car-card">
+                    <div class="img-wrapper">
+                        <img src="https://amazonaws.com" alt="Aero EV Concept">
                     </div>
-                    <h3>Titanium Edition SUV</h3>
-                    <div class="car-price">$142,900</div>
-                    <button class="inquire-btn" onclick="bookInquiry('Titanium Edition SUV')">Book Private Viewing</button>
+                    <div class="info car-info">
+                        <div class="car-tags">
+                            <span class="tag">100% Electric</span>
+                            <span class="tag">Autopilot Ready</span>
+                        </div>
+                        <h3>Aero EV Concept</h3>
+                        <div class="car-price">$115,000</div>
+                        <button class="inquire-btn" onclick="showComingSoon()">Book Private Viewing</button>
+                    </div>
                 </div>
+
+                <!-- Vehicle Card 3 -->
+                <div class="car-card">
+                    <div class="img-wrapper">
+                        <img src="https://istockphoto.com" alt="Titanium Edition SUV">
+                    </div>
+                    <div class="info car-info">
+                        <div class="car-tags">
+                            <span class="tag">All-Wheel Drive</span>
+                            <span class="tag">7-Seater Luxury</span>
+                        </div>
+                        <h3>Titanium Edition SUV</h3>
+                        <div class="car-price">$142,900</div>
+                        <button class="inquire-btn" onclick="showComingSoon()">Book Private Viewing</button>
+                    </div>
+                </div>
+
             </div>
+        </main>
+    </div>
 
-        </div>
-    </main>
+    <!-- Hidden Coming Soon View Page Layout Container -->
+    <div id="coming-soon-page">
+        <h1>Coming Soon</h1>
+        <p>This premium feature for LEADEEDGE Automobile is currently under development.</p>
+        <button class="back-btn" onclick="goBackToShowroom()">Return To Showroom</button>
+    </div>
 
-    <!-- JavaScript: Interactivity Layer -->
-    <script>
-        function bookInquiry(carName) {
-            alert("Thank you for choosing LEADEEDGE Automobile! \n\nA client advisor will contact you shortly to confirm your VIP showroom viewing for the " + carName + ".");
-        }
-    </script>
-
-</body>
-</html>
