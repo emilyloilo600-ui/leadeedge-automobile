@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEADEEDGE Automobile // Luxury Dealership</title>
+    <style>
+        /* CSS: Core Layout and Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #0b0c10;
+            color: #ffffff;
+        }
+
+        /* Navigation Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 6%;
+            background-color: #11141a;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #d4af37; /* Gold accent line */
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #d4af37;
+            letter-spacing: 3px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #c5c6c7;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+
+        /* Hero Banner Section */
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+            background: linear-gradient(rgba(11, 12, 16, 0.85), #0b0c10), url('https://dreamstime.com') no-repeat center/cover;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 span {
+            color: #d4af37;
+        }
+
+        .hero p {
+            color: #c5c6c7;
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        /* Showroom Section */
+        .showroom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 2px solid #1f2833;
+            padding-bottom: 10px;
+        }
+
+        /* Vehicle Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        /* Vehicle Card Styling */
+        .car-card {
+            background-color: #11141a;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .car-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15);
+        }
+
+        .img-wrapper {
+            background-color: #000000;
+            height: 240px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .car-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .car-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .car-info {
+            padding: 25px;
+        }
+
+        .car-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            background-color: #1f2833;
+            color: #d4af37;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .car-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .car-price {
+            color: #d4af37;
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .inquire-btn {
+            width: 100%;
+            background-color: #d4af37;
+            color: #0b0c10;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .inquire-btn:hover {
+            background-color: #ffffff;
+            color: #0b0c10;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">LEADEEDGE AUTOMOBILE</div>
+        <ul class="nav-links">
+            <li><a href="#">Inventory</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero Showcase Section -->
+    <section class="hero">
+        <h1>DRIVE THE <span>EDGE OF LUXURY</span></h1>
+        <p>Prestige vehicles engineered for exceptional performance.</p>
+    </section>
+
+    <!-- Main Inventory Section -->
+    <main class="showroom">
+        <h2 class="section-title">Current Fleet Available</h2>
+        <div class="grid">
+
+            <!-- Vehicle Card 1: Sports Car -->
+            <div class="car-card">
+                <div class="img-wrapper">
+                    <!-- Live image asset from Dreamstime storage -->
+                    <img src="https://dreamstime.com" alt="Apex Grand Coupe">
+                </div>
+                <div class="info car-info">
+                    <div class="car-tags">
+                        <span class="tag">New Fleet</span>
+                        <span class="tag">V8 Bi-Turbo</span>
+                    </div>
+                    <h3>Apex Grand Coupe Blue</h3>
+                    <div class="car-price">$189,500</div>
+                    <button class="inquire-btn" onclick="bookInquiry('Apex Grand Coupe')">Book Private Viewing</button>
+                </div>
+            </div>
+
+            <!-- Vehicle Card 2: Electric Concept -->
+            <div class="car-card">
+                <div class="img-wrapper">
+                    <!-- Live image asset from Vecteezy storage -->
+                    <img src="https://amazonaws.com" alt="Aero EV Concept">
+                </div>
+                <div class="info car-info">
+                    <div class="car-tags">
+                        <span class="tag">100% Electric</span>
+                        <span class="tag">Autopilot Ready</span>
+                    </div>
+                    <h3>Aero EV Concept</h3>
+                    <div class="car-price">$115,000</div>
+                    <button class="inquire-btn" onclick="bookInquiry('Aero EV Concept')">Book Private Viewing</button>
+                </div>
+            </div>
+
+            <!-- Vehicle Card 3: Premium SUV -->
+            <div class="car-card">
+                <div class="img-wrapper">
+                    <!-- Live image asset from iStock storage -->
+                    <img src="https://istockphoto.com" alt="Titanium Edition SUV">
+                </div>
+                <div class="info car-info">
+                    <div class="car-tags">
+                        <span class="tag">All-Wheel Drive</span>
+                        <span class="tag">7-Seater Luxury</span>
+                    </div>
+                    <h3>Titanium Edition SUV</h3>
+                    <div class="car-price">$142,900</div>
+                    <button class="inquire-btn" onclick="bookInquiry('Titanium Edition SUV')">Book Private Viewing</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- JavaScript: Interactivity Layer -->
+    <script>
+        function bookInquiry(carName) {
+            alert("Thank you for choosing LEADEEDGE Automobile! \n\nA client advisor will contact you shortly to confirm your VIP showroom viewing for the " + carName + ".");
+        }
+    </script>
+
+</body>
+</html>
