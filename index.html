@@ -3,300 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LEADEEDGE Automobile // Luxury Dealership</title>
+    <title>Philip Dansofo | LeadEdge Autos Showroom</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+        /* FIXED OVERFLOW: Constrain body from stretching horizontally */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { 
+            background-color: #030712; 
+            color: #f3f4f6; 
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.5;
+            padding-bottom: 60px;
+            max-width: 100vw;
+            overflow-x: hidden; /* Blocks all left-to-right scrolling */
         }
-
-        body {
-            background-color: #0b0c10;
-            color: #ffffff;
+        .ribbon {
+            background: linear-gradient(90deg, #f59e0b, #d97706);
+            color: #030712;
+            text-align: center;
+            padding: 12px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            max-width: 100%;
         }
-
         header {
+            background-color: #0f172a;
+            border-bottom: 1px solid #1e293b;
+            padding: 20px;
+            width: 100%;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 6%;
-            background-color: #11141a;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 2px solid #d4af37;
+            flex-wrap: wrap; /* Allows wrap on small devices */
+            gap: 15px;
         }
-
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: #d4af37;
-            letter-spacing: 3px;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            color: #c5c6c7;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #d4af37;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 120px 20px;
-            background: linear-gradient(rgba(11, 12, 16, 0.85), #0b0c10), url('https://dreamstime.com') no-repeat center/cover;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        .hero h1 span {
-            color: #d4af37;
-        }
-
-        .hero p {
-            color: #c5c6c7;
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-        }
-
-        .showroom {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            text-align: center;
-            border-bottom: 2px solid #1f2833;
-            padding-bottom: 10px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-        }
-
-        .car-card {
-            background-color: #11141a;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-        }
-
-        .car-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15);
-        }
-
-        .img-wrapper {
-            background-color: #000000;
-            height: 240px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .car-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .car-card:hover img {
-            transform: scale(1.08);
-        }
-
-        .car-info {
-            padding: 25px;
-        }
-
-        .car-tags {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .tag {
-            background-color: #1f2833;
-            color: #d4af37;
-            font-size: 0.8rem;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-
-        .car-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+        .logo h1 { font-size: 22px; font-weight: 900; color: #ffffff; }
+        .logo span { color: #f59e0b; }
+        .logo p { font-size: 10px; color: #f59e0b; text-transform: uppercase; font-weight: bold; }
+        
+        .whatsapp-btn {
+            background-color: #059669;
             color: #ffffff;
-        }
-
-        .car-price {
-            color: #d4af37;
-            font-size: 1.6rem;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 12px;
             font-weight: bold;
-            margin-bottom: 20px;
         }
+        .hero {
+            background-color: #0f172a;
+            border-bottom: 1px solid #1e293b;
+            padding: 50px 20px;
+            text-align: center;
+            width: 100%;
+        }
+        .hero h2 { font-size: 28px; font-weight: 800; color: #ffffff; margin-bottom: 12px; }
+        .hero span { color: #f59e0b; }
+        .hero p { color: #9ca3af; font-size: 14px; max-width: 600px; margin: 0 auto; }
 
-        .inquire-link-btn {
+        .showroom { max-width: 1200px; margin: 40px auto; padding: 0 15px; width: 100%; }
+        .showroom h3 { font-size: 20px; font-weight: bold; color: #ffffff; margin-bottom: 25px; border-bottom: 2px solid #1e293b; padding-bottom: 10px; }
+        
+        /* FIXED GRID: Swapped hard pixel targets for flexible percentages */
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+        .car-card {
+            background-color: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .image-wrapper { position: relative; width: 100%; height: 200px; background-color: #000000; }
+        .car-img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .condition-lbl { font-size: 10px; font-weight: bold; color: #f59e0b; text-transform: uppercase; background-color: #030712; padding: 3px 8px; border-radius: 4px; display: inline-block; margin-bottom: 6px; }
+        .car-title { font-size: 18px; font-weight: bold; color: #ffffff; margin-bottom: 4px; }
+        .car-price { font-size: 22px; font-weight: 900; color: #10b981; margin-bottom: 12px; }
+        
+        .specs-list {
+            border-top: 1px solid #1e293b;
+            border-bottom: 1px solid #1e293b;
+            padding: 12px 0;
+            margin-bottom: 15px;
+            font-size: 12px;
+            color: #9ca3af;
+        }
+        .specs-list p { margin-bottom: 6px; }
+
+        .inspect-btn {
             display: block;
             text-align: center;
-            width: 100%;
-            background-color: #d4af37;
-            color: #0b0c10;
-            text-decoration: none;
+            background-color: #030712;
+            color: #f59e0b;
+            border: 1px solid #f59e0b;
             padding: 12px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .inquire-link-btn:hover {
-            background-color: #ffffff;
-            color: #0b0c10;
-        }
-
-        /* Contact Us Footer Section Styling */
-        footer {
-            background-color: #11141a;
-            text-align: center;
-            padding: 60px 20px;
-            margin-top: 60px;
-            border-top: 2px solid #1f2833;
-        }
-
-        footer h2 {
-            font-size: 2rem;
-            color: #ffffff;
-            margin-bottom: 15px;
-        }
-
-        footer p {
-            color: #c5c6c7;
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-        }
-
-        .contact-btn {
-            display: inline-block;
-            background-color: #d4af37;
-            color: #0b0c10;
+            border-radius: 10px;
             text-decoration: none;
-            padding: 14px 35px;
-            font-size: 1.1rem;
+            font-size: 12px;
             font-weight: bold;
-            border-radius: 8px;
-            transition: 0.3s ease;
+            transition: 0.2s;
         }
-
-        .contact-btn:hover {
-            background-color: #ffffff;
-            transform: scale(1.05);
-        }
+        .inspect-btn:hover { background-color: #f59e0b; color: #030712; }
     </style>
 </head>
 <body>
 
+    <div class="ribbon">
+        ⚡ Certified New & Foreign Used (Tokunbo) Vehicles • Verified VIN & Genuine Customs Documentation
+    </div>
+
     <header>
-        <a href="#" class="logo">LEADEEDGE AUTOMOBILE</a>
-        <ul class="nav-links">
-            <li><a href="soon.html">Inventory</a></li>
-            <li><a href="soon.html">Services</a></li>
-            <li><a href="soon.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
+        <div class="header-container">
+            <div class="logo">
+                <h1>LEADEDGE<span>AUTOS</span></h1>
+                <p>By Philip Dansofo</p>
+            </div>
+            <a href="whatsapp://send?phone=2348067535165" class="whatsapp-btn">Chat on WhatsApp</a>
+        </div>
     </header>
 
     <section class="hero">
-        <h1>DRIVE THE <span>EDGE OF LUXURY</span></h1>
-        <p>Prestige vehicles engineered for exceptional performance.</p>
+        <h2>Premium Car Dealership with <span>Total Transparency</span></h2>
+        <p>Hi, I'm <strong>Philip Dansofo</strong>. I source, vet, and deliver mileage-certified foreign-used (Tokunbo) and brand-new cars across Nigeria.</p>
     </section>
 
     <main class="showroom">
-        <h2 class="section-title">Current Fleet Available</h2>
-        <div class="grid">
-
-            <!-- Vehicle Card 1 -->
+        <h3>Available Showroom Fleet</h3>
+        <div class="fleet-grid">
+            {% for car in cars %}
             <div class="car-card">
-                <div class="img-wrapper">
-                    <img src="https://dreamstime.com" alt="Apex Grand Coupe">
+                <div class="image-wrapper">
+                    <img src="{{ car.image_url }}" alt="{{ car.title }}" class="car-img">
                 </div>
-                <div class="info car-info">
-                    <div class="car-tags">
-                        <span class="tag">New Fleet</span>
-                        <span class="tag">V8 Bi-Turbo</span>
+                <div class="card-body">
+                    <div>
+                        <span class="condition-lbl">{{ car.condition }}</span>
+                        <h4 class="car-title">{{ car.title }}</h4>
+                        <div class="car-price">{{ car.price }}</div>
+                        <div class="specs-list">
+                            <p><strong>🛣️ Mileage:</strong> {{ car.mileage }}</p>
+                            <p><strong>⚙️ Engine:</strong> {{ car.engine }}</p>
+                            <p><strong>📜 Customs:</strong> {{ car.customs }}</p>
+                            <p><strong>✨ Features:</strong> {{ car.features }}</p>
+                        </div>
                     </div>
-                    <h3>Apex Grand Coupe Blue</h3>
-                    <div class="car-price">₦285,000,000</div>
-                    <a href="soon.html" class="inquire-link-btn">Book Private Viewing</a>
+                    <a href="/car/{{ car.id }}" class="inspect-btn">
+                       View Full Specifications
+                    </a>
                 </div>
             </div>
-
-            <!-- Vehicle Card 2 -->
-            <div class="car-card">
-                <div class="img-wrapper">
-                    <img src="https://amazonaws.com" alt="Aero EV Concept">
-                </div>
-                <div class="info car-info">
-                    <div class="car-tags">
-                        <span class="tag">100% Electric</span>
-                        <span class="tag">Autopilot Ready</span>
-                    </div>
-                    <h3>Aero EV Concept</h3>
-                    <div class="car-price">₦172,500,000</div>
-                    <a href="soon.html" class="inquire-link-btn">Book Private Viewing</a>
-                </div>
-            </div>
-
-            <!-- Vehicle Card 3 -->
-            <div class="car-card">
-                <div class="img-wrapper">
-                    <img src="https://istockphoto.com" alt="Titanium Edition SUV">
-                </div>
-                <div class="info car-info">
-                    <div class="car-tags">
-                        <span class="tag">All-Wheel Drive</span>
-                        <span class="tag">7-Seater Luxury</span>
-                    </div>
-                    <h3>Titanium Edition SUV</h3>
-                    <div class="car-price">₦215,000,000</div>
-                    <a href="soon.html" class="inquire-link-btn">Book Private Viewing</a>
-                </div>
-            </div>
-
+            {% endfor %}
         </div>
     </main>
-
-    <!-- New Contact Us Section Section -->
-    <footer>
-        <h2>Contact Us</h2>
-        <p>Have questions about our luxury fleet? Reach out to our team today.</p>
-        <a href="contact.html" class="contact-btn">Get In Touch</a>
-    </footer>
 
 </body>
 </html>
